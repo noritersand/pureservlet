@@ -7,6 +7,6 @@
 </head>
 <body>
 <h1>hello world!</h1>
-<a href="/sample.do">push me</a>
+<a href="/example.do">push me</a>
 </body>
 </html>

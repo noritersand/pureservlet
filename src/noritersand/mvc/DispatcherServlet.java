@@ -65,8 +65,8 @@ public class DispatcherServlet extends HttpServlet {
         System.out.println("requestedUrl: " + requestedUrl);
 
         switch (requestedUrl) {
-        case "/sample.do":
-            this.forward(req, resp, "/WEB-INF/jsp/sample.jsp");
+        case "/example.do":
+            this.forward(req, resp, "/WEB-INF/jsp/example/example.jsp");
             break;
         default:
             resp.sendRedirect(contextPath);
