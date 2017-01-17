@@ -1,11 +1,11 @@
-package noritersand.config;
+package com.noritersand.config;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.ServletRegistration.Dynamic;
 import javax.servlet.annotation.WebListener;
 
-import noritersand.mvc.DispatcherServlet;
+import com.noritersand.mvc.DispatcherServlet;
 
 @WebListener
 public class WebAppInitializer implements ServletContextListener {

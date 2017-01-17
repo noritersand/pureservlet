@@ -1,4 +1,4 @@
-package noritersand.mvc;
+package com.noritersand.mvc;
 
 import java.io.IOException;
 import java.util.Arrays;
