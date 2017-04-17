@@ -1,11 +1,11 @@
-package com.noritersand.config;
+package pureservlet.config;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.ServletRegistration.Dynamic;
 import javax.servlet.annotation.WebListener;
 
-import com.noritersand.mvc.DispatcherServlet;
+import pureservlet.mvc.DispatcherServlet;
 
 @WebListener
 public class WebAppInitializer implements ServletContextListener {
