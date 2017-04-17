@@ -14,6 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 
 public class DispatcherServlet extends HttpServlet {
 	private static final long serialVersionUID = -5671289707695059116L;
+	
+	private static final String JSP_PREFIX = "/WEB-INF/jsp/";
+	private static final String JSP_SUFIX = ".jsp";
 
 	@Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -51,26 +54,21 @@ public class DispatcherServlet extends HttpServlet {
             throws ServletException, IOException {
         this.printParameters(req);
 
-        req.setCharacterEncoding("utf-8");
+		req.setCharacterEncoding("UTF-8");
 
-        String contextPath = req.getContextPath();
-        contextPath = contextPath.length() == 0 ? "/" : contextPath;
+		String contextPath = req.getContextPath();
+		contextPath = contextPath.length() == 0 ? "/" : contextPath;
 
-        String requestedUrl = req.getRequestURI();
-        requestedUrl = (contextPath.length() > 1)
-                ? requestedUrl.substring(contextPath.length(), requestedUrl.length())
-                : requestedUrl;
+		String requestURI = req.getRequestURI();
+		requestURI = (contextPath.length() > 1)
+				? requestURI.substring(contextPath.length(), requestURI.length())
+				: requestURI;
 
-        System.out.println("contextPath: " + contextPath);
-        System.out.println("requestedUrl: " + requestedUrl);
+		System.out.println("contextPath: " + contextPath);
+		System.out.println("requestURI: " + requestURI);
 
-        switch (requestedUrl) {
-        case "/example.do":
-            this.forward(req, resp, "/WEB-INF/jsp/example/example.jsp");
-            break;
-        default:
-            resp.sendRedirect(contextPath);
-            break;
-        }
+		requestURI = requestURI.substring(0, requestURI.lastIndexOf("."));
+		StringBuilder builder = new StringBuilder(JSP_PREFIX).append(requestURI).append(JSP_SUFIX);
+		forward(req, resp, builder.toString());
     }
 }
