@@ -1,6 +1,6 @@
-#pure Servlet
+# pure Servlet
 
-###environments
+### environments
 - jdk 1.8
 - tomcat-8.5
 - eclipse
