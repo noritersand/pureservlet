@@ -1,7 +1,7 @@
 # pure Servlet
 
 ### environments
-- jdk 1.8
-- tomcat-8.5
+- jdk9
+- tomcat9
 - eclipse
 
