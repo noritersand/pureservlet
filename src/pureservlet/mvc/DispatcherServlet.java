@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 public class DispatcherServlet extends HttpServlet {
 	private static final long serialVersionUID = -5671289707695059116L;
 	
-	private static final String JSP_PREFIX = "/WEB-INF/jsp/";
+	private static final String JSP_PREFIX = "/WEB-INF/jsp";
 	private static final String JSP_SUFIX = ".jsp";
 
 	@Override
@@ -44,8 +44,8 @@ public class DispatcherServlet extends HttpServlet {
         Set<String> keySet = parameterMap.keySet();
         Iterator<String> iterator = keySet.iterator();
         while (iterator.hasNext()) {
-            String key = (String) iterator.next();
-            String[] values = (String[]) parameterMap.get(key);
+            String key = iterator.next();
+            String[] values = parameterMap.get(key);
             System.out.println(key + ": " + Arrays.toString(values));
         }
     }

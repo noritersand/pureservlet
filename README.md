@@ -1,7 +1,7 @@
 # pure Servlet
 
 ### environments
-- jdk9
+- jdk10
 - tomcat9
 - eclipse
 
