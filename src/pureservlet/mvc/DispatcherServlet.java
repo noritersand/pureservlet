@@ -67,7 +67,7 @@ public class DispatcherServlet extends HttpServlet {
 		System.out.println("contextPath: " + contextPath);
 		System.out.println("requestURI: " + requestURI);
 
-		requestURI = requestURI.substring(0, requestURI.lastIndexOf("."));
+		requestURI = requestURI.substring(0, requestURI.lastIndexOf('.'));
 		StringBuilder builder = new StringBuilder(JSP_PREFIX).append(requestURI).append(JSP_SUFIX);
 		forward(req, resp, builder.toString());
     }
