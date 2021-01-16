@@ -9,6 +9,7 @@ import pureservlet.mvc.DispatcherServlet;
 
 @WebListener
 public class WebAppInitializer implements ServletContextListener {
+	
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
 		Dynamic registration = event.getServletContext().addServlet("servlet", new DispatcherServlet());
